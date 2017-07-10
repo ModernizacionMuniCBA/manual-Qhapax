@@ -1,0 +1,3 @@
+# Organizaciones
+
+Lista de empresas privadas, organizaciones sin fines de lucro, oficinas de Gobierno, etc. Se usarán para múltiples listas en el sistema.

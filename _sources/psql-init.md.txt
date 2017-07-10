@@ -1,0 +1,13 @@
+# Crear una base de datos y usuario en Postgres
+
+```bash
+$ sudo su - postgres
+$ psql
+```
+
+```psql
+create role qhapax;
+\password qhapax
+create database qhapax with owner=qhapax;
+ALTER ROLE "qhapax" WITH LOGIN;
+```

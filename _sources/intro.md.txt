@@ -1,0 +1,73 @@
+# Qhapax
+*Qhapax* es una voz quechua para describir al que tiene el poder.
+En este caso, en nuestra época, el gobierno elegido democráticamente.
+Por ejemplo *Qhapax huasi* se usaba para describir al palacio de gobierno.
+
+![Alt Datos abiertos](otros/images/screen-datos-abiertos.png?raw=true)
+
+### Uso
+Qhapax inició siendo una aplicación para carga y publicación de datos de funcionarios,
+ oficinas públicas y otros contenidos gubernamentales.
+Actualmente permite tambien administrar un sitio web básico que usamos como portal de
+transparencia.
+
+### Tecnología usada
+Esa aplicación web esta hecha con Django 1.9 (Python 3). Se construyó
+como software libre para permitir la reutilización en otros gobiernos y
+para permitir las sugerencias y mejoras propuestas por terceros.
+
+### Colaboración y participación
+Si queres implementar *Qhapax* en tu gobierno podes contactarnos por
+cualquier consulta. Es posible simplemente descargar el código y hacerlo
+correr en tu servidor o tambien usar nuestra infraestructura. La
+Municipalidad de Córdoba apoyará a otros gobiernos que deseen participar
+de esta iniciativa.
+
+### Instalación
+Tienes que tener instalado pip3 en tu distribución linux.
+Con pip3 instalado:
+
+```
+$ sudo pip3 install virtualenv
+$ virtualenv-3.3 <nombre ambiente py3>
+$ source <nombre ambiente py3>/bin/activate
+$ python --version
+Python 3.5.2
+```
+
+Ya está instalado un ambiente para python3. Ahora debes clonar el software
+usando git e instalar dependencias:
+
+```
+$ git clone https://github.com/avdata99/Qhapax
+$ cd Qhapax
+$ pip install -r requirements.txt
+```
+
+Por último, configurar la base de datos. En
+
+```
+$ sudo su - postgres
+$ psql
+
+y ejecutar la siguientes directivas sql
+
+```sql
+CREATE DATABASE qhapax;
+// elegir otra clave!
+CREATE USER qhapax_dba WITH PASSWORD 'password';
+ALTER ROLE qhapax_dba SET client_encoding TO 'utf8';
+ALTER ROLE qhapax_dba SET default_transaction_isolation TO 'read committed';
+ALTER ROLE qhapax_dba SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE qhapax TO qhapax_dba;
+```
+
+Luego de regresar al virtualenv (``^d, ^d``), se debe migrar la base
+e importar datos iniciales.
+
+
+```
+$ cp qhapax/local_settings.py.template qhapax/local_settings.py   # actualizar password
+$ python manage.py migrate
+$ python manage.py loaddata core/initial_data/*
+```

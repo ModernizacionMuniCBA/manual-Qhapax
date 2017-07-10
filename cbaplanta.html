@@ -1,0 +1,157 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Córdoba planta vida &#8212; documentación de Qhapax - 0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Formularios rápidos al público" href="forms.html" />
+    <link rel="prev" title="Convenios vigentes y pasados con Organizaciones" href="convenios.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cordoba-planta-vida">
+<span id="cordoba-planta-vida"></span><h1>Córdoba planta vida<a class="headerlink" href="#cordoba-planta-vida" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Es un programa de forestación basado en los plantar un árbol por cada niño que nace en la Ciudad.</p>
+<p>En cada nacimiento debe contenerse con datos del barrio o zona indicado ya que es importante que exista un plan de forestación que indique que especies se deben plantarse en cada lugar.</p>
+<p>Cada registro de nacimiento se transforma en un registro de seguimiento de este plan.</p>
+<div class="section" id="lista-de-pendientes">
+<span id="lista-de-pendientes"></span><h2>Lista de pendientes<a class="headerlink" href="#lista-de-pendientes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En el primer paso van a ver la lista de todos los nacidos.</p>
+<p><img alt="lista" src="docs/img/lista.png" />
+​
+La tarea de aplicar el objetivo de este módulo implica comunicarse vía email o telefónica con los
+padres de cada nacido para notificarles que pueden pasar a retirar una semilla.</p>
+<p>Cada trámite está en una de las líneas tiene un estado:</p>
+<ul class="simple">
+<li>Pendiente: El niño nació y ambiente todavía no hizo ningún trámite</li>
+<li>Notificación enviada: Le mandamos un email o un SMS y no sabemos si lo recibió</li>
+<li>Notificación recibida: Sabemos fehacientemente que la recibieron (por ejemplo si los llamamos por telefono o contestaron nuestro email)</li>
+<li>Semilla entregadas: Los padres vinieron a buscarlas</li>
+<li>Vencido el plazo: Automáticamente si pasan 60 días desde la notificación y los padres no vinieron a buscarla</li>
+<li>Municipio planto el árbol: Se venció el plazo y entonces el municipio planto el árbol</li>
+<li>Caduco el plazo para que municipio plante el arbol: Para que no nos queden registros sin atender, si el municpio no planta el arbol en X días entonces pasamos el trámite a este estado y lo descartamos.</li>
+</ul>
+</div>
+<div class="section" id="filtrar-listas">
+<span id="filtrar-listas"></span><h2>Filtrar listas<a class="headerlink" href="#filtrar-listas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Siempre desde el menú de filtro de arriba a la derecha se podrá filtrar para ver trámites en un estado específico.</p>
+<p><img alt="filtros" src="docs/img/filtros.png" /></p>
+</div>
+<div class="section" id="modificar-registros">
+<span id="modificar-registros"></span><h2>Modificar registros<a class="headerlink" href="#modificar-registros" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Desde la lista podrá siempre para atender un caso clickear sobre la primera columna del elemento de la lista que se desea modificar. Allí se abrirá el formulario donde se podrá modificar el <em>estado</em>, especificar la <em>especie plantada</em> y agregar <em>observaciones internas</em> si fuera necesario.</p>
+<p>​<img alt="editar" src="docs/img/editar.png" /></p>
+<p>​Las fechas en que cambian los estados se registrarán automáticamente, estarán visibles en las listas pero no son modificables. El sistema las define automáticamente.</p>
+</div>
+<div class="section" id="datos-de-nacimientos-desarrolladores">
+<span id="datos-de-nacimientos-desarrolladores"></span><h2>Datos de nacimientos (desarrolladores)<a class="headerlink" href="#datos-de-nacimientos-desarrolladores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los datos de los nacimientos de cada día se extraen vía webservice a la base de datos del Registro Civil. En nuestro caso se hace vía tarea programada con el <a class="reference external" href="https://github.com/avdata99/Qhapax/tree/master/docs/management/commands/importar_nacimientos_registro_civil.py">script importar_nacimientos_registro_civil.py_</a>.Por ejemplo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">importar_nacimientos_registro_civil</span> <span class="o">--</span><span class="n">fechaDesde</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span> <span class="o">--</span><span class="n">fechaHasta</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Configurar Base de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comfuncionarios.html">App: Comunciación Funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">App: Convenios</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">App: Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">App: Formularios Públicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guias.html">App: Guías Turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tributaria.html">App: Ordenanza tributaria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">App: Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forestacion.html">App: Plan de forestación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metas.html">App: Plan de metas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transporte.html">App: Transporte público</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="convenios.html" title="capítulo anterior">Convenios vigentes y pasados con Organizaciones</a></li>
+      <li>Next: <a href="forms.html" title="próximo capítulo">Formularios rápidos al público</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Municipalidad de Córdoba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/cbaplanta.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
