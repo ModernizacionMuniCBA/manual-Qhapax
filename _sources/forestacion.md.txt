@@ -1,0 +1,14 @@
+# Plan de Forestacion
+
+Hay un plan de arbolado vigente. Este plan indica que árboles se esperan en cada barrio.  
+Esto sirve de guía para que los vecinos elijan que plantas poner en sus casas.  
+Tambien se usa como referencia para regalar árboles a los padres de recién nacidos en el plan _Córdoba Planta Vida_.  
+
+## Datos a tomar
+Hoy existe en la web esto: http://plandeforestacion.esy.es/  
+
+Los datos usar son:  
+ - Lista de especies de arboles posibles de usar.
+ - Tamaño de las veredas.
+ - Especificaciones de las especies recomendadas para cada barrio, especie y vereda.
+

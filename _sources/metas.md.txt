@@ -1,0 +1,12 @@
+# Plan de metas del gobierno
+
+Las metas del gobierno estan estructuradas segun el siguiente nivel gerárquico.  
+
+*Lineamientos estratégicos*: Plan mas general de acciones de gobierno.  
+Cada lineamiento tiene *Componentes*.  
+Cada Componente tiene *Objetivos*.  
+Cada objetivo tiene *Metas*.  
+Para alcanzar cada meta hay una lista de *Actividades*.  
+
+Cada uno de estos niveles tiene su propia composición y formas de medir el estado de avance.  
+Tiene que ser posoble publciar este plan general de acción y su evolución para el control ciudadano.  

@@ -1,0 +1,3 @@
+# Convenios vigentes y pasados con Organizaciones
+
+Modulo para publicar convenios de colaboración o similares con organizaciones (ONGs, empresas, ortos)

@@ -1,0 +1,20 @@
+# Bienvenid@ a la documentación de Qhapax
+
+Qhapax es la plataforma web que motoriza el portal de transparencia
+de la Municipalidad Nacional de Córdoba.
+
+
+## Contenidos
+
+* [Introduccion](intro.md)
+* [Configurar Base de datos](psql-init.md)
+* [App: Comunciación Funcionarios](comfuncionarios.md)
+* [App: Convenios](convenios.md)
+* [App: Córdoba planta vida](cbaplanta.md)
+* [App: Formularios Públicos](forms.md)
+* [App: Guías Turísticos](guias.md)
+* [App: Ordenanza tributaria](tributaria.md)
+* [App: Organizaciones](organizaciones.md)
+* [App: Plan de forestación](forestacion.md)
+* [App: Plan de metas](metas.md)
+* [App: Transporte público](transporte.md)
