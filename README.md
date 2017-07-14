@@ -2,7 +2,7 @@
 Manual de Qhapax, la plataforma de Gobierno Abierto de la Ciudad Córdoba
 
 Este repositorio guarda la versión renderizada **EN DESARROLLO** de la documentación,
-accesible desde https://modernizacionmunicba.github.io/manual-qhapax
+accesible desde https://modernizacionmunicba.github.io/manual-Qhapax
 
 
 ## Intrucciones de actualización
