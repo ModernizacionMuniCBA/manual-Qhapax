@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Plan de Forestacion" href="forestacion.html" />
-    <link rel="prev" title="Ordenanza Tarifaria Anual" href="tributaria.html" />
+    <link rel="next" title="Plan de Forestacion" href="plandeforestacion.html" />
+    <link rel="prev" title="Ordenanza Tarifaria Anual" href="ordenanzatributaria.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -42,8 +42,119 @@
           <div class="body" role="main">
             
   <div class="section" id="organizaciones">
-<span id="organizaciones"></span><h1>Organizaciones<a class="headerlink" href="#organizaciones" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Lista de empresas privadas, organizaciones sin fines de lucro, oficinas de Gobierno, etc. Se usarán para múltiples listas en el sistema.</p>
+<h1>Organizaciones<a class="headerlink" href="#organizaciones" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Lista de empresas privadas, organizaciones sin fines de lucro, oficinas
+de Gobierno, etc. Se usarán para múltiples listas en el sistema.</p>
+<div class="section" id="module-organizaciones.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-organizaciones.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Modulo destinado a los ciudadanos en general, se incluye a todo tipo de organizacines
+(sociales, comerciales, del estado, etc)
+Como regla general, una organización es aquella que tiene (o debería tener) CUIT</p>
+<dl class="class">
+<dt id="organizaciones.models.ComunicacionOrganizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">ComunicacionOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>tipo</em>, <em>valor</em>, <em>descripcion</em>, <em>privado</em>, <em>creado</em>, <em>ultima_modificacion</em>, <em>objeto</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.ComunicacionOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="organizaciones.models.ComunicacionSucursalOrganizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">ComunicacionSucursalOrganizacion</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.ComunicacionSucursalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Comunicacion mas particular con una sucursal en particular</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="organizaciones.models.HistoricalOrganizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>CUIT</em>, <em>created</em>, <em>modified</em>, <em>tipo</em>, <em>history_id</em>, <em>history_date</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="organizaciones.models.HistoricalOrganizacion.instance_type">
+<code class="descname">instance_type</code><a class="headerlink" href="#organizaciones.models.HistoricalOrganizacion.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>alias de <a class="reference internal" href="#organizaciones.models.Organizacion" title="organizaciones.models.Organizacion"><code class="xref py py-class docutils literal"><span class="pre">Organizacion</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="organizaciones.models.HistoricalOrganizacion.revert_url">
+<code class="descname">revert_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalOrganizacion.revert_url" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>URL for this change in the default admin site.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="organizaciones.models.HistoricalSucursalOrganizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalSucursalOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>orden</em>, <em>direccion</em>, <em>barrio</em>, <em>created</em>, <em>modified</em>, <em>organizacion</em>, <em>geo</em>, <em>history_id</em>, <em>history_date</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalSucursalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="organizaciones.models.HistoricalSucursalOrganizacion.instance_type">
+<code class="descname">instance_type</code><a class="headerlink" href="#organizaciones.models.HistoricalSucursalOrganizacion.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>alias de <a class="reference internal" href="#organizaciones.models.SucursalOrganizacion" title="organizaciones.models.SucursalOrganizacion"><code class="xref py py-class docutils literal"><span class="pre">SucursalOrganizacion</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="organizaciones.models.HistoricalSucursalOrganizacion.revert_url">
+<code class="descname">revert_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalSucursalOrganizacion.revert_url" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>URL for this change in the default admin site.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="organizaciones.models.HistoricalTipoOrganizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalTipoOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>descripcion</em>, <em>created</em>, <em>modified</em>, <em>depende_de</em>, <em>history_id</em>, <em>history_date</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalTipoOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="organizaciones.models.HistoricalTipoOrganizacion.instance_type">
+<code class="descname">instance_type</code><a class="headerlink" href="#organizaciones.models.HistoricalTipoOrganizacion.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>alias de <a class="reference internal" href="#organizaciones.models.TipoOrganizacion" title="organizaciones.models.TipoOrganizacion"><code class="xref py py-class docutils literal"><span class="pre">TipoOrganizacion</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="organizaciones.models.HistoricalTipoOrganizacion.revert_url">
+<code class="descname">revert_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalTipoOrganizacion.revert_url" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>URL for this change in the default admin site.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="organizaciones.models.Organizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">Organizacion</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.Organizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Organizaciones externas. ONGs, EMPRESAS, partidos, universidades, oficinas de gobiernos
+Esta lista aparece en los pedidos de acceso a la info y otros forms públicos para
+que los interesados se identifiquen</p>
+<dl class="method">
+<dt id="organizaciones.models.Organizacion.save_without_historical_record">
+<code class="descname">save_without_historical_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.Organizacion.save_without_historical_record" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Save model without saving a historical record</p>
+<p>Make sure you know what you’re doing before you use this method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="organizaciones.models.SucursalOrganizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">SucursalOrganizacion</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.SucursalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>cada una de las ubicaciones físiscas de una organizacion.
+Luego servirá tambien para habilitaciones de locales comerciales o de otro tipo</p>
+<dl class="method">
+<dt id="organizaciones.models.SucursalOrganizacion.save_without_historical_record">
+<code class="descname">save_without_historical_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.SucursalOrganizacion.save_without_historical_record" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Save model without saving a historical record</p>
+<p>Make sure you know what you’re doing before you use this method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="organizaciones.models.TipoOrganizacion">
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">TipoOrganizacion</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.TipoOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>reemplazo de Core.models.TipoOrganizacion</p>
+<dl class="method">
+<dt id="organizaciones.models.TipoOrganizacion.save_without_historical_record">
+<code class="descname">save_without_historical_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.TipoOrganizacion.save_without_historical_record" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Save model without saving a historical record</p>
+<p>Make sure you know what you’re doing before you use this method.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -62,27 +173,31 @@
 
 
 <h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Configurar Base de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comfuncionarios.html">App: Comunciación Funcionarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="convenios.html">App: Convenios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cbaplanta.html">App: Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forms.html">App: Formularios Públicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guias.html">App: Guías Turísticos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tributaria.html">App: Ordenanza tributaria</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">App: Organizaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forestacion.html">App: Plan de forestación</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metas.html">App: Plan de metas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transporte.html">App: Transporte público</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tributaria.html" title="capítulo anterior">Ordenanza Tarifaria Anual</a></li>
-      <li>Next: <a href="forestacion.html" title="próximo capítulo">Plan de Forestacion</a></li>
+      <li>Previous: <a href="ordenanzatributaria.html" title="capítulo anterior">Ordenanza Tarifaria Anual</a></li>
+      <li>Next: <a href="plandeforestacion.html" title="próximo capítulo">Plan de Forestacion</a></li>
   </ul></li>
 </ul>
 </div>
@@ -108,7 +223,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/organizaciones.md.txt"
+      <a href="_sources/organizaciones.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Córdoba planta vida" href="cbaplanta.html" />
-    <link rel="prev" title="Comunicacion con funcionarios" href="comfuncionarios.html" />
+    <link rel="next" title="Córdoba planta vida" href="cordobaplantavida.html" />
+    <link rel="prev" title="Comunicacion con funcionarios" href="comunicacionfuncionarios.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -42,8 +42,41 @@
           <div class="body" role="main">
             
   <div class="section" id="convenios-vigentes-y-pasados-con-organizaciones">
-<span id="convenios-vigentes-y-pasados-con-organizaciones"></span><h1>Convenios vigentes y pasados con Organizaciones<a class="headerlink" href="#convenios-vigentes-y-pasados-con-organizaciones" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Modulo para publicar convenios de colaboración o similares con organizaciones (ONGs, empresas, ortos)</p>
+<h1>Convenios vigentes y pasados con Organizaciones<a class="headerlink" href="#convenios-vigentes-y-pasados-con-organizaciones" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Modulo para publicar convenios de colaboración o similares con
+organizaciones (ONGs, empresas, ortos)</p>
+<div class="section" id="module-convenios.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-convenios.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="convenios.models.Convenio">
+<em class="property">class </em><code class="descclassname">convenios.models.</code><code class="descname">Convenio</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#convenios.models.Convenio" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>convenio</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="convenios.models.LinkConvenio">
+<em class="property">class </em><code class="descclassname">convenios.models.</code><code class="descname">LinkConvenio</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#convenios.models.LinkConvenio" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>URLs que hacen referencia al convenio</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="convenios.models.MultimediaConvenio">
+<em class="property">class </em><code class="descclassname">convenios.models.</code><code class="descname">MultimediaConvenio</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#convenios.models.MultimediaConvenio" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>contenidos multimedia varios que referencian a la forma del convenio</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="convenios.models.ParticipantesConvenio">
+<em class="property">class </em><code class="descclassname">convenios.models.</code><code class="descname">ParticipantesConvenio</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#convenios.models.ParticipantesConvenio" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>cada participante y detalles de su particpación</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="convenios.models.TipoConvenio">
+<em class="property">class </em><code class="descclassname">convenios.models.</code><code class="descname">TipoConvenio</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>descripcion</em><span class="sig-paren">)</span><a class="headerlink" href="#convenios.models.TipoConvenio" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+</div>
 </div>
 
 
@@ -62,27 +95,31 @@
 
 
 <h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Configurar Base de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comfuncionarios.html">App: Comunciación Funcionarios</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">App: Convenios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cbaplanta.html">App: Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forms.html">App: Formularios Públicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guias.html">App: Guías Turísticos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tributaria.html">App: Ordenanza tributaria</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">App: Organizaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forestacion.html">App: Plan de forestación</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metas.html">App: Plan de metas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transporte.html">App: Transporte público</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="comfuncionarios.html" title="capítulo anterior">Comunicacion con funcionarios</a></li>
-      <li>Next: <a href="cbaplanta.html" title="próximo capítulo">Córdoba planta vida</a></li>
+      <li>Previous: <a href="comunicacionfuncionarios.html" title="capítulo anterior">Comunicacion con funcionarios</a></li>
+      <li>Next: <a href="cordobaplantavida.html" title="próximo capítulo">Córdoba planta vida</a></li>
   </ul></li>
 </ul>
 </div>
@@ -108,7 +145,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/convenios.md.txt"
+      <a href="_sources/convenios.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

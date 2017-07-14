@@ -1,0 +1,28 @@
+Comunicacion con funcionarios
+=============================
+
+Aplicacion para la comunicación bidireccional con los funcionarios
+políticos.
+
+Esto incluye recibir información:
+
+- Invitaciones a eventos especiales de Gobierno (en algunos casos con control de asistencia)
+- Avisos de Audiencias pendientes.
+- Solicitudes de acceso a la información pendientes.
+- Mensajes privados de otros funcionarios.
+
+Permite además que el funcionario envíe información:
+
+- Alertas de asambleas en su área. Esto permitirá avisar a los vecinos para que no
+vengan al palacio o no esperen algunos servicios.
+- Notificación de vacaciones y ausencias programadas
+- Notificación de viajes a charlas, seminarios o eventos de interés para su cargo.
+Avances o novedades en su área (podríá incluirse el plan de metas)
+
+
+Modelos
+-------
+
+.. automodule:: comunicacionfuncionarios.models
+   :members:
+

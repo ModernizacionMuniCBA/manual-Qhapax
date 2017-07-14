@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bienvenid@ a la documentación de Qhapax &#8212; documentación de Qhapax - 0</title>
+    <title>Datos del transporte público de la Ciudad de Córdoba &#8212; documentación de Qhapax - 0</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Qhapax" href="intro.html" />
+    <link rel="prev" title="Plan de metas del gobierno" href="plandemetas.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -40,40 +40,41 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="bienvenid-a-la-documentacion-de-qhapax">
-<h1>Bienvenid&#64; a la documentación de Qhapax<a class="headerlink" href="#bienvenid-a-la-documentacion-de-qhapax" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Qhapax es la plataforma web que motoriza el portal de transparencia de
-la Municipalidad Nacional de Córdoba.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#uso">Uso</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#tecnologia-usada">Tecnología usada</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#colaboracion-y-participacion">Colaboración y participación</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#instalacion">Instalación</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="psql-init.html#modelos">Modelos</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="datos-del-transporte-publico-de-la-ciudad-de-cordoba">
+<h1>Datos del transporte público de la Ciudad de Córdoba<a class="headerlink" href="#datos-del-transporte-publico-de-la-ciudad-de-cordoba" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>El sistema de transporte público masivo de Córdoba esta basado en varias
+empresas. Cada empresa tienen líneas asignadas con recorridos
+especificados.</p>
+<div class="line-block">
+<div class="line">Cada emopresa coordina con el municipio los recorridos y las paradas.
+Estos son dinámicos.</div>
+<div class="line">Las empresas de transporte pueden elegir su proveedor de sistemas pero
+deben entregar esta información junto a la del GPS de las unidades.</div>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Aplicaciones</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
-</ul>
+<p>En el caso de la ciudad de Córdoba, todas las empresas de transporte
+utilizan el mismo proveedor de servicios informáticos por lo que se
+simplifica la conexión a estos datos.</p>
+<div class="line-block">
+<div class="line">Este modelo se conecta al webservice de esta empresa para sincronizar
+los datos.</div>
+<div class="line">Como suponemos que estos servicios tecnológicos pueden cambiar de
+proveedor en el futuro, mantenemos este modulo para tener una copia de
+los datos y garantizar los mismos al futuro proveedor.</div>
+</div>
+<div class="section" id="module-transportepublico.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-transportepublico.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="transportepublico.models.EmpresaTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">EmpresaTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.EmpresaTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada una de las empresas proveedores del servicio</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.LineaTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">LineaTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.LineaTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>cada una de las lineas o recorridos de trasnporte publico masivo</p>
+</dd></dl>
+
 </div>
 </div>
 
@@ -83,7 +84,7 @@ la Municipalidad Nacional de Córdoba.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">Qhapax</a></h1>
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
 
 
 
@@ -98,7 +99,7 @@ la Municipalidad Nacional de Córdoba.</p>
 <li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aplicaciones</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
@@ -109,14 +110,14 @@ la Municipalidad Nacional de Córdoba.</p>
 <li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Datos del transporte público de la Ciudad de Córdoba</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="intro.html" title="próximo capítulo">Qhapax</a></li>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="plandemetas.html" title="capítulo anterior">Plan de metas del gobierno</a></li>
   </ul></li>
 </ul>
 </div>
@@ -142,7 +143,7 @@ la Municipalidad Nacional de Córdoba.</p>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/index.rst.txt"
+      <a href="_sources/transportepublico.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

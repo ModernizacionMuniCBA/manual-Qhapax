@@ -1,0 +1,46 @@
+Registro de guías turísticos
+============================
+
+Lista de guías turísticos autorizados.
+
+| Los interesados se dan de alta en la web de turismo y se crean los
+  registros iniciales.
+| Luego van a la oficina de turismo a llevar los papeles, se validan, se
+  cargan y los damos de alta con alguna fecha de vencimiento.
+
+Datos a solicitar
+-----------------
+
+-  Nombre
+-  Apellido
+-  DNI
+-  títulos
+-  idiomas
+-  CV
+-  Descripción personal del guía
+-  mail
+-  teléfono
+-  redes sociales
+
+Habilitación
+------------
+
+Esta tiene una fecha de inicio y de vencimiento. El portal de Gobierno
+Abierto tiene una URL con la ficha del Guía, puede haber un código QR en
+una posible credencial habilitante.
+
+El registro de cada habilitación podría tener dos años de validez.
+
+Agregados posibles
+------------------
+
+-  Pensar un sistema de comentarios de los turistas (algo como una
+   uberización)
+
+
+Modelos
+-------
+
+.. automodule:: guiasturisticos.models
+   :members:
+

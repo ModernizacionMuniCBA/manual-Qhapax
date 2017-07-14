@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Comunicacion con funcionarios" href="comfuncionarios.html" />
+    <link rel="next" title="Datos de catastro" href="catastro.html" />
     <link rel="prev" title="Qhapax" href="intro.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -42,16 +42,19 @@
           <div class="body" role="main">
             
   <div class="section" id="crear-una-base-de-datos-y-usuario-en-postgres">
-<span id="crear-una-base-de-datos-y-usuario-en-postgres"></span><h1>Crear una base de datos y usuario en Postgres<a class="headerlink" href="#crear-una-base-de-datos-y-usuario-en-postgres" title="Enlazar permanentemente con este título">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo su - postgres
+<h1>Crear una base de datos y usuario en Postgres<a class="headerlink" href="#crear-una-base-de-datos-y-usuario-en-postgres" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ sudo su - postgres
 $ psql
 </pre></div>
 </div>
-<div class="highlight-psql"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="k">role</span> <span class="n">qhapax</span><span class="p">;</span>
-<span class="go">\password qhapax</span>
-<span class="go">create database qhapax with owner=qhapax;</span>
-<span class="go">ALTER ROLE &quot;qhapax&quot; WITH LOGIN;</span>
+<div class="code psql highlight-default"><div class="highlight"><pre><span></span><span class="n">create</span> <span class="n">role</span> <span class="n">qhapax</span><span class="p">;</span>
+\<span class="n">password</span> <span class="n">qhapax</span>
+<span class="n">create</span> <span class="n">database</span> <span class="n">qhapax</span> <span class="k">with</span> <span class="n">owner</span><span class="o">=</span><span class="n">qhapax</span><span class="p">;</span>
+<span class="n">ALTER</span> <span class="n">ROLE</span> <span class="s2">&quot;qhapax&quot;</span> <span class="n">WITH</span> <span class="n">LOGIN</span><span class="p">;</span>
 </pre></div>
+</div>
+<div class="section" id="modelos">
+<h2>Modelos<a class="headerlink" href="#modelos" title="Enlazar permanentemente con este título">¶</a></h2>
 </div>
 </div>
 
@@ -72,18 +75,25 @@ $ psql
 
 <h3>Navegación</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduccion</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Configurar Base de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comfuncionarios.html">App: Comunciación Funcionarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="convenios.html">App: Convenios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cbaplanta.html">App: Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forms.html">App: Formularios Públicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guias.html">App: Guías Turísticos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tributaria.html">App: Ordenanza tributaria</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">App: Organizaciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forestacion.html">App: Plan de forestación</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metas.html">App: Plan de metas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transporte.html">App: Transporte público</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Crear una base de datos y usuario en Postgres</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modelos">Modelos</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
 </ul>
 
 <div class="relations">
@@ -91,7 +101,7 @@ $ psql
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="intro.html" title="capítulo anterior">Qhapax</a></li>
-      <li>Next: <a href="comfuncionarios.html" title="próximo capítulo">Comunicacion con funcionarios</a></li>
+      <li>Next: <a href="catastro.html" title="próximo capítulo">Datos de catastro</a></li>
   </ul></li>
 </ul>
 </div>
@@ -117,7 +127,7 @@ $ psql
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/psql-init.md.txt"
+      <a href="_sources/psql-init.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

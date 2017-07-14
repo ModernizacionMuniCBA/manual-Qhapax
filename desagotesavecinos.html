@@ -1,0 +1,229 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Desagotes a vecinos &#8212; documentación de Qhapax - 0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="desagotes-a-vecinos">
+<h1>Desagotes a vecinos<a class="headerlink" href="#desagotes-a-vecinos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Módulo de recepcion de solicitudes de vecinos para desagotes y registros
+de atención por parte de las empresas prestatarias del servicio.</p>
+<div class="section" id="prestatarias">
+<h2>Prestatarias<a class="headerlink" href="#prestatarias" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>En primer lugar es importante cargar al sistema las empresas que
+proveerán este servicio. En la sección <em>Desagotesavecinos</em> se debe
+ingresar a <em>Prestatarias de desagotes</em>.</li>
+<li>En la parte superior derecha de la pantalla y con el boton <em>Agregar
+prestatarias de desagotes</em>.</li>
+<li>Allí deben cargarse el número de CUIT y nombre de las empresas.</li>
+</ul>
+</div>
+<div class="section" id="recepcion-de-solicitudes-de-desagotes">
+<h2>Recepción de solicitudes de desagotes<a class="headerlink" href="#recepcion-de-solicitudes-de-desagotes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para cargar las solicitudes de desagotes realizadas por los vecinos debe
+ingresarse a la sección <em>Solicitudes de desagotes</em> en
+<em>Desagotesavecinos</em>. Allí se verá la lista de solicitudes ya cargadas.</p>
+<p>Con el boton <em>Agregar Solicitud de desagotes</em> puede cargarse una
+solicitud.</p>
+<div class="figure" id="id1">
+<img alt="nuevo desagote" src="docs/img/nuevo-desagote.png" />
+<p class="caption"><span class="caption-text">nuevo desagote</span></p>
+</div>
+<p>Para esta carga se requiere cargar o la nomenclatura catastral o el
+domicilio del solicitante. Preferentemente debe cargarse la
+nomenclatura catatral ya que esta puede geolocalizarse desde el
+<a class="reference external" href="https://gobiernoabierto.cordoba.gob.ar/mapas/emap/">portal de  catastro</a>.</p>
+<p>Si es posible, deben cargarse ambas.</p>
+<p>Además debe cargarse la cantidad cámaras y viviendas en terreno.</p>
+<p>En la parte inferior pueden agregarse uno o más vías de comunicación
+del solicitante. Es muy importante al menos cargar una.</p>
+<p>El botón <em>agregar</em> al final permite agregar todas las vías de
+comunicación que sean necesarias.</p>
+<div class="figure" id="id2">
+<img alt="comunicacion desagote" src="docs/img/comunicacion-solicitante-desagote.png" />
+<p class="caption"><span class="caption-text">comunicacion desagote</span></p>
+</div>
+<p>Cada pozo (no cámara) debe describirse al final en la parte inferior con
+detalles mínimos.</p>
+<div class="figure" id="id3">
+<img alt="pozos" src="docs/img/pozos.png" />
+<p class="caption"><span class="caption-text">pozos</span></p>
+</div>
+<p>El botón <em>agregar</em> al final permite agregar todas los pozos que deban
+describirse.</p>
+</div>
+<div class="section" id="derivacion-hacia-una-empresa-prestataria">
+<h2>Derivación hacia una empresa prestataria<a class="headerlink" href="#derivacion-hacia-una-empresa-prestataria" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Una vez que sea posible debería ingresar a la lista de solicitudes
+pendientes y derivar aquellas que aún no hayan sido asignadas a una de
+las empresas prestatarias.</p>
+<p>Para elegir los elementos a analizar en la lista de desagotes es posible
+filtrar desde los selectores en la parte superior derecha del listado.</p>
+<div class="figure" id="id4">
+<img alt="filtros" src="docs/img/filtros.png" />
+<p class="caption"><span class="caption-text">filtros</span></p>
+</div>
+<p>Algún usuario de cada empresa prestataria debe tener acceso al sistema
+para saber que tareas han sido asignadas a su empresa.</p>
+</div>
+<div class="section" id="marcar-trabajo-como-terminado">
+<h2>Marcar trabajo como terminado<a class="headerlink" href="#marcar-trabajo-como-terminado" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La misma empresa que realiza el servicio o algún usuario del sistema que
+reciba la notificación puede marcar el trabajo como terminado editando.
+La fecha se actualizará automáticamente al cambiar el estado.</p>
+<div class="section" id="perfiles-de-usarios">
+<h3>Perfiles de usarios<a class="headerlink" href="#perfiles-de-usarios" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En este módulo hay un perfil de administrador desde el municipio que
+puede ver y editar las solicitudes para asignarlas a las prestatarias.</p>
+<p>Debe existir un perfil para los usuarios externos de las prestarias
+que pueda ver la lista de tareas asignadas SOLO a su empresa. Tambien
+debe permitirle marcar los trabajos terminados y agregar observaciones
+si las hubiera.</p>
+<p>Analizar la posibilidad de que la prestataria pueda modificar el
+registro con datos de la vivienda como referencia para futuras
+visitas.</p>
+</div>
+</div>
+<div class="section" id="module-desagotesavecinos.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-desagotesavecinos.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="desagotesavecinos.models.ComunicacionPrestatariaDesagotes">
+<em class="property">class </em><code class="descclassname">desagotesavecinos.models.</code><code class="descname">ComunicacionPrestatariaDesagotes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#desagotesavecinos.models.ComunicacionPrestatariaDesagotes" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>permite cargar telefonos, emails, web, etc)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="desagotesavecinos.models.ComunicacionSolicitanteDesagote">
+<em class="property">class </em><code class="descclassname">desagotesavecinos.models.</code><code class="descname">ComunicacionSolicitanteDesagote</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#desagotesavecinos.models.ComunicacionSolicitanteDesagote" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>permite cargar telefonos, emails, web, etc)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="desagotesavecinos.models.PozoEnTerreno">
+<em class="property">class </em><code class="descclassname">desagotesavecinos.models.</code><code class="descname">PozoEnTerreno</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#desagotesavecinos.models.PozoEnTerreno" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>datos de cada pozo</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="desagotesavecinos.models.PrestatariaDesagotes">
+<em class="property">class </em><code class="descclassname">desagotesavecinos.models.</code><code class="descname">PrestatariaDesagotes</code><span class="sig-paren">(</span><em>id</em>, <em>CUIT</em>, <em>nombre</em>, <em>direccion</em><span class="sig-paren">)</span><a class="headerlink" href="#desagotesavecinos.models.PrestatariaDesagotes" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="desagotesavecinos.models.SolicitudDesagote">
+<em class="property">class </em><code class="descclassname">desagotesavecinos.models.</code><code class="descname">SolicitudDesagote</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#desagotesavecinos.models.SolicitudDesagote" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>solicitud de desagote</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Municipalidad de Córdoba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/desagotesavecinos.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
