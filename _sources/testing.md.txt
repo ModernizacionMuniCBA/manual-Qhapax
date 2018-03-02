@@ -1,0 +1,77 @@
+# Testing de Qhapax
+
+
+Para mejorar la calidad y robustez, facilitar refactors y reducir las regresiones,
+estamos invirtiendo esfuerzo de desarrollo en realizar pruebas unitarias (principalmente)
+de las aplicaciones que  componen Qhapax.
+
+
+## Cómo ejecutar los tests
+
+En un ambiente de desarrollo instalado como describe el ``README`` (incluyendo permiso de creacion
+de BBDD para el rol utilizado), instalar las dependencias extra
+
+```bash
+pip install -r requirements.txt
+```
+
+Luego simplemente
+
+```
+pytest
+```
+
+## Herramientas
+
+Qhapax utiliza [pytest](https://docs.pytest.org/) y [pytest-django](http://pytest-django.readthedocs.io)
+para simplificar la creación y ejecución de tests. Para crear "datos" para ejercitar un test,
+utilizamos [factory-boy](https://factoryboy.readthedocs.io/en/latest/), que reemplaza los fixtures estáticos.
+Cuando la complejidad de un "setup" lo requiere, usamos [Mock](https://docs.python.org/3/library/unittest.mock.html).
+
+Una lectura rápida a los tutoriales/documentación de estas librerías debería servir para comprender los tests existentes
+y comenzar a realizar nuevos.
+
+
+## Algunas recomendaciones (que nos gusta respetar) para escribir tests
+
+
+- Nombres de tests significativos. (no `test_model_1` y `test_model_2`)
+- Probamos **nuestro código**, no librerías de terceros ni, menos aun, django.
+- Un test puede parecer obvio, pero es una herramienta necesaria para realizar refactor.
+- No hacer repeticiones innecesarias.
+- Un modelo nuevo debe incluir su `Factory` asociado.
+- Los tests se ubican en un subpaquete `<app>/tests`
+- Los factories van en `<app>/tests/factories.py`
+- Separar tests por componente (`test_models.py`, `test_views.py`)
+- Los tests propios y del equipo pueden no ser perfectos. ¡Depende de todos mejorarlos!
+
+
+## Tips
+
+
+- Ejecuta tests resultantes de un filtro
+
+```
+pytest -k "parte_nombre_test"
+```
+
+- Ejecutar un sólo módulo
+
+```
+pytest app/tests/test_models.py
+```
+
+- Ejecutar todos los tests de una app
+
+```
+pytest app
+```
+
+- Usar pdb en un test
+
+Se puede incluir un breakpoint (`import pdb;pdb.set_trace()`) en cualquier punto del código
+y lograr que el test-runner se detenga
+
+```
+pytest -s
+```

@@ -63,7 +63,7 @@ Como regla general, una organización es aquella que tiene (o debería tener) CU
 
 <dl class="class">
 <dt id="organizaciones.models.HistoricalOrganizacion">
-<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>CUIT</em>, <em>created</em>, <em>modified</em>, <em>tipo</em>, <em>history_id</em>, <em>history_date</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>CUIT</em>, <em>domicilio_calle</em>, <em>domicilio_nro</em>, <em>domicilio_piso</em>, <em>domicilio_dpto</em>, <em>domicilio_barrio</em>, <em>domicilio_codigo_postal</em>, <em>created</em>, <em>modified</em>, <em>tipo</em>, <em>history_id</em>, <em>history_date</em>, <em>history_change_reason</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="organizaciones.models.HistoricalOrganizacion.instance_type">
 <code class="descname">instance_type</code><a class="headerlink" href="#organizaciones.models.HistoricalOrganizacion.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
@@ -80,7 +80,7 @@ Como regla general, una organización es aquella que tiene (o debería tener) CU
 
 <dl class="class">
 <dt id="organizaciones.models.HistoricalSucursalOrganizacion">
-<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalSucursalOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>orden</em>, <em>direccion</em>, <em>barrio</em>, <em>created</em>, <em>modified</em>, <em>organizacion</em>, <em>geo</em>, <em>history_id</em>, <em>history_date</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalSucursalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalSucursalOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>orden</em>, <em>direccion</em>, <em>direccion_nro</em>, <em>barrio</em>, <em>codigo_postal</em>, <em>created</em>, <em>modified</em>, <em>organizacion</em>, <em>parcela</em>, <em>history_id</em>, <em>history_date</em>, <em>history_change_reason</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalSucursalOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="organizaciones.models.HistoricalSucursalOrganizacion.instance_type">
 <code class="descname">instance_type</code><a class="headerlink" href="#organizaciones.models.HistoricalSucursalOrganizacion.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
@@ -97,7 +97,7 @@ Como regla general, una organización es aquella que tiene (o debería tener) CU
 
 <dl class="class">
 <dt id="organizaciones.models.HistoricalTipoOrganizacion">
-<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalTipoOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>descripcion</em>, <em>created</em>, <em>modified</em>, <em>depende_de</em>, <em>history_id</em>, <em>history_date</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalTipoOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<em class="property">class </em><code class="descclassname">organizaciones.models.</code><code class="descname">HistoricalTipoOrganizacion</code><span class="sig-paren">(</span><em>id</em>, <em>nombre</em>, <em>descripcion</em>, <em>created</em>, <em>modified</em>, <em>depende_de</em>, <em>history_id</em>, <em>history_date</em>, <em>history_change_reason</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.HistoricalTipoOrganizacion" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="organizaciones.models.HistoricalTipoOrganizacion.instance_type">
 <code class="descname">instance_type</code><a class="headerlink" href="#organizaciones.models.HistoricalTipoOrganizacion.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
@@ -119,10 +119,22 @@ Como regla general, una organización es aquella que tiene (o debería tener) CU
 Esta lista aparece en los pedidos de acceso a la info y otros forms públicos para
 que los interesados se identifiquen</p>
 <dl class="method">
+<dt id="organizaciones.models.Organizacion.clean_cuit">
+<code class="descname">clean_cuit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.Organizacion.clean_cuit" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>limpiar el CUIT de caracteres extraños</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="organizaciones.models.Organizacion.save_without_historical_record">
 <code class="descname">save_without_historical_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.Organizacion.save_without_historical_record" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Save model without saving a historical record</p>
 <p>Make sure you know what you’re doing before you use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="organizaciones.models.Organizacion.ubicaciones_comerciales">
+<code class="descname">ubicaciones_comerciales</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#organizaciones.models.Organizacion.ubicaciones_comerciales" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>lista de sucursales geolocalizadas correctamente</p>
 </dd></dl>
 
 </dd></dl>
@@ -179,17 +191,16 @@ Luego servirá tambien para habilitaciones de locales comerciales o de otro tipo
 </ul>
 <p class="caption"><span class="caption-text">Aplicaciones</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 </ul>
 
 <div class="relations">
@@ -216,7 +227,7 @@ Luego servirá tambien para habilitaciones de locales comerciales o de otro tipo
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2017, Municipalidad de Córdoba.
+      &copy;2016-2018, Municipalidad de Córdoba.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>

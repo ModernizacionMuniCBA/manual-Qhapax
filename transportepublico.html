@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Datos de catastro" href="catastro.html" />
     <link rel="prev" title="Plan de metas del gobierno" href="plandemetas.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -70,9 +71,111 @@ los datos y garantizar los mismos al futuro proveedor.</div>
 </dd></dl>
 
 <dl class="class">
+<dt id="transportepublico.models.HabilitacionVehiculoTransporte">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">HabilitacionVehiculoTransporte</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.HabilitacionVehiculoTransporte" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>NO USADO, Eliminar si se confirma. Cada habilitacion de un vehiculo</p>
+<dl class="method">
+<dt id="transportepublico.models.HabilitacionVehiculoTransporte.save_without_historical_record">
+<code class="descname">save_without_historical_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.HabilitacionVehiculoTransporte.save_without_historical_record" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Save model without saving a historical record</p>
+<p>Make sure you know what you’re doing before you use this method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.HistoricalHabilitacionVehiculoTransporte">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">HistoricalHabilitacionVehiculoTransporte</code><span class="sig-paren">(</span><em>id</em>, <em>fecha_inicio_habilitacion</em>, <em>fecha_vencimiento_habilitacion</em>, <em>acta_habilitacion</em>, <em>created</em>, <em>modified</em>, <em>vehiculo</em>, <em>history_id</em>, <em>history_date</em>, <em>history_change_reason</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.HistoricalHabilitacionVehiculoTransporte" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="transportepublico.models.HistoricalHabilitacionVehiculoTransporte.instance_type">
+<code class="descname">instance_type</code><a class="headerlink" href="#transportepublico.models.HistoricalHabilitacionVehiculoTransporte.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>alias de <a class="reference internal" href="#transportepublico.models.HabilitacionVehiculoTransporte" title="transportepublico.models.HabilitacionVehiculoTransporte"><code class="xref py py-class docutils literal"><span class="pre">HabilitacionVehiculoTransporte</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="transportepublico.models.HistoricalHabilitacionVehiculoTransporte.revert_url">
+<code class="descname">revert_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.HistoricalHabilitacionVehiculoTransporte.revert_url" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>URL for this change in the default admin site.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.HistoricalVehiculoTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">HistoricalVehiculoTransportePublico</code><span class="sig-paren">(</span><em>id</em>, <em>interno</em>, <em>anio_fabricacion</em>, <em>patente</em>, <em>publicado</em>, <em>decreto</em>, <em>decreto_fecha</em>, <em>fecha_aprobacion</em>, <em>fecha_habilitacion</em>, <em>fecha_actualizacion</em>, <em>condicion</em>, <em>observaciones_publicas</em>, <em>observaciones_internas</em>, <em>observado_o_a_revisar</em>, <em>created</em>, <em>modified</em>, <em>titular</em>, <em>modelo</em>, <em>tipo_permiso</em>, <em>history_id</em>, <em>history_date</em>, <em>history_change_reason</em>, <em>history_user</em>, <em>history_type</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.HistoricalVehiculoTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="transportepublico.models.HistoricalVehiculoTransportePublico.instance_type">
+<code class="descname">instance_type</code><a class="headerlink" href="#transportepublico.models.HistoricalVehiculoTransportePublico.instance_type" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>alias de <a class="reference internal" href="#transportepublico.models.VehiculoTransportePublico" title="transportepublico.models.VehiculoTransportePublico"><code class="xref py py-class docutils literal"><span class="pre">VehiculoTransportePublico</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="transportepublico.models.HistoricalVehiculoTransportePublico.revert_url">
+<code class="descname">revert_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.HistoricalVehiculoTransportePublico.revert_url" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>URL for this change in the default admin site.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="transportepublico.models.LineaTransportePublico">
 <em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">LineaTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.LineaTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>cada una de las lineas o recorridos de trasnporte publico masivo</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.MarcaVehiculo">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">MarcaVehiculo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.MarcaVehiculo" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>marcas de autos y otros vehiculos</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.ModeloVehiculo">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">ModeloVehiculo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.ModeloVehiculo" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>modelos de autos y otros vehiculos</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.ParadaTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">ParadaTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.ParadaTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>cada una de las lineas o recorridos de trasnporte publico masivo</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.PosteParadaTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">PosteParadaTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.PosteParadaTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>cada una de las garitas o postes donde puede haber una o más paradas</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.PuntoRecorridoLineaTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">PuntoRecorridoLineaTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.PuntoRecorridoLineaTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>cada uno de los puntos dentro de un recorridos de las lineas de transporte publico geolocalizado</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.RecorridoLineaTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">RecorridoLineaTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.RecorridoLineaTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>cada uno de los recorridos de las lineas de transporte publico</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.TipoServicioTransporte">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">TipoServicioTransporte</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.TipoServicioTransporte" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>tipo de transporte que se ofrece al público (taxis, remis, escolar, privado, etc)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="transportepublico.models.VehiculoTransportePublico">
+<em class="property">class </em><code class="descclassname">transportepublico.models.</code><code class="descname">VehiculoTransportePublico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.VehiculoTransportePublico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>vehiculo al servicio de tranporte (privado, escolar, taxi, remis, etc)</p>
+<dl class="method">
+<dt id="transportepublico.models.VehiculoTransportePublico.save_without_historical_record">
+<code class="descname">save_without_historical_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#transportepublico.models.VehiculoTransportePublico.save_without_historical_record" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Save model without saving a historical record</p>
+<p>Make sure you know what you’re doing before you use this method.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -100,17 +203,16 @@ los datos y garantizar los mismos al futuro proveedor.</div>
 </ul>
 <p class="caption"><span class="caption-text">Aplicaciones</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Datos del transporte público de la Ciudad de Córdoba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 </ul>
 
 <div class="relations">
@@ -118,6 +220,7 @@ los datos y garantizar los mismos al futuro proveedor.</div>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="plandemetas.html" title="capítulo anterior">Plan de metas del gobierno</a></li>
+      <li>Next: <a href="catastro.html" title="próximo capítulo">Datos de catastro</a></li>
   </ul></li>
 </ul>
 </div>
@@ -136,7 +239,7 @@ los datos y garantizar los mismos al futuro proveedor.</div>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2017, Municipalidad de Córdoba.
+      &copy;2016-2018, Municipalidad de Córdoba.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>

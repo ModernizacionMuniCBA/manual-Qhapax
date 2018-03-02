@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Testing de Qhapax &#8212; documentación de Qhapax - 0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="testing-de-qhapax">
+<span id="testing-de-qhapax"></span><h1>Testing de Qhapax<a class="headerlink" href="#testing-de-qhapax" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Para mejorar la calidad y robustez, facilitar refactors y reducir las regresiones,
+estamos invirtiendo esfuerzo de desarrollo en realizar pruebas unitarias (principalmente)
+de las aplicaciones que  componen Qhapax.</p>
+<div class="section" id="como-ejecutar-los-tests">
+<span id="como-ejecutar-los-tests"></span><h2>Cómo ejecutar los tests<a class="headerlink" href="#como-ejecutar-los-tests" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En un ambiente de desarrollo instalado como describe el <code class="docutils literal"><span class="pre">README</span></code> (incluyendo permiso de creacion
+de BBDD para el rol utilizado), instalar las dependencias extra</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Luego simplemente</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pytest</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="herramientas">
+<span id="herramientas"></span><h2>Herramientas<a class="headerlink" href="#herramientas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Qhapax utiliza <a class="reference external" href="https://docs.pytest.org/">pytest</a> y <a class="reference external" href="http://pytest-django.readthedocs.io">pytest-django</a>
+para simplificar la creación y ejecución de tests. Para crear &quot;datos&quot; para ejercitar un test,
+utilizamos <a class="reference external" href="https://factoryboy.readthedocs.io/en/latest/">factory-boy</a>, que reemplaza los fixtures estáticos.
+Cuando la complejidad de un &quot;setup&quot; lo requiere, usamos <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html">Mock</a>.</p>
+<p>Una lectura rápida a los tutoriales/documentación de estas librerías debería servir para comprender los tests existentes
+y comenzar a realizar nuevos.</p>
+</div>
+<div class="section" id="algunas-recomendaciones-que-nos-gusta-respetar-para-escribir-tests">
+<span id="algunas-recomendaciones-que-nos-gusta-respetar-para-escribir-tests"></span><h2>Algunas recomendaciones (que nos gusta respetar) para escribir tests<a class="headerlink" href="#algunas-recomendaciones-que-nos-gusta-respetar-para-escribir-tests" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Nombres de tests significativos. (no <code class="docutils literal"><span class="pre">test_model_1</span></code> y <code class="docutils literal"><span class="pre">test_model_2</span></code>)</li>
+<li>Probamos <strong>nuestro código</strong>, no librerías de terceros ni, menos aun, django.</li>
+<li>Un test puede parecer obvio, pero es una herramienta necesaria para realizar refactor.</li>
+<li>No hacer repeticiones innecesarias.</li>
+<li>Un modelo nuevo debe incluir su <code class="docutils literal"><span class="pre">Factory</span></code> asociado.</li>
+<li>Los tests se ubican en un subpaquete <code class="docutils literal"><span class="pre">&lt;app&gt;/tests</span></code></li>
+<li>Los factories van en <code class="docutils literal"><span class="pre">&lt;app&gt;/tests/factories.py</span></code></li>
+<li>Separar tests por componente (<code class="docutils literal"><span class="pre">test_models.py</span></code>, <code class="docutils literal"><span class="pre">test_views.py</span></code>)</li>
+<li>Los tests propios y del equipo pueden no ser perfectos. ¡Depende de todos mejorarlos!</li>
+</ul>
+</div>
+<div class="section" id="tips">
+<span id="tips"></span><h2>Tips<a class="headerlink" href="#tips" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Ejecuta tests resultantes de un filtro</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;parte_nombre_test&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Ejecutar un sólo módulo</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">app</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">test_models</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Ejecutar todos los tests de una app</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">app</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Usar pdb en un test</li>
+</ul>
+<p>Se puede incluir un breakpoint (<code class="docutils literal"><span class="pre">import</span> <span class="pre">pdb;pdb.set_trace()</span></code>) en cualquier punto del código
+y lograr que el test-runner se detenga</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">-</span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016-2018, Municipalidad de Córdoba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/testing.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

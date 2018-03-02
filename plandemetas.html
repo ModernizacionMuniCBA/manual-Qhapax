@@ -61,9 +61,9 @@ evolución para el control ciudadano.</div>
 <div class="section" id="module-plandemetas.models">
 <span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-plandemetas.models" title="Enlazar permanentemente con este título">¶</a></h2>
 <dl class="class">
-<dt id="plandemetas.models.ActividadMeta">
-<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">ActividadMeta</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.ActividadMeta" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Cada actividad realizada como avance para una meta</p>
+<dt id="plandemetas.models.AvanceIndicadorMeta">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">AvanceIndicadorMeta</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.AvanceIndicadorMeta" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>histórico de cada uno de los avances periódicos de las metas</p>
 </dd></dl>
 
 <dl class="class">
@@ -87,7 +87,7 @@ evolución para el control ciudadano.</div>
 <dl class="class">
 <dt id="plandemetas.models.Lineamiento">
 <em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">Lineamiento</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Lineamiento" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Cada una de las lineas de accion de gobierno.</p>
+<dd><p>Cada una de las lineas de accion del plan.</p>
 <dl class="attribute">
 <dt id="plandemetas.models.Lineamiento.componentes">
 <code class="descname">componentes</code><a class="headerlink" href="#plandemetas.models.Lineamiento.componentes" title="Enlazar permanentemente con esta definición">¶</a></dt>
@@ -100,10 +100,31 @@ evolución para el control ciudadano.</div>
 <dt id="plandemetas.models.Meta">
 <em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">Meta</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Cada meta del objetivo</p>
+<dl class="method">
+<dt id="plandemetas.models.Meta.cambios_pendientes">
+<code class="descname">cambios_pendientes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta.cambios_pendientes" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>indica si se han cargado propuestas de actualizacion en la meta o indicadores (los campos <a href="#id1"><span class="problematic" id="id2">new_</span></a>)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plandemetas.models.Meta.estado_de_avance_estimado">
+<code class="descname">estado_de_avance_estimado</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta.estado_de_avance_estimado" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>en la época de actualizaciones muchas veces no se carga el <a href="#id3"><span class="problematic" id="id4">new_</span></a>
+entonces necesitamos estimar cual sería el nuevo.
+Sólo cuando new_estado_de_avance &gt; estado_de_avance lo considero el _nuevo_</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="plandemetas.models.Meta.indicadores">
 <code class="descname">indicadores</code><a class="headerlink" href="#plandemetas.models.Meta.indicadores" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>devolver solo los publicados</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plandemetas.models.Meta.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta.save" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Se sobreescribe el save() para que cuando la meta este aprobada se
+actualice fecha_actualizacion_oficial</p>
 </dd></dl>
 
 </dd></dl>
@@ -123,13 +144,19 @@ evolución para el control ciudadano.</div>
 <dl class="class">
 <dt id="plandemetas.models.PlanDeMetas">
 <em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">PlanDeMetas</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.PlanDeMetas" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>datos generales del plan de metas de cada gobierno</p>
+<dd><p>datos generales del plan de metas</p>
 <dl class="attribute">
 <dt id="plandemetas.models.PlanDeMetas.lineamientos">
 <code class="descname">lineamientos</code><a class="headerlink" href="#plandemetas.models.PlanDeMetas.lineamientos" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>devolver solo los publicados</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.UserPlanDeMetas">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">UserPlanDeMetas</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.UserPlanDeMetas" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>usuario especial de carga del plan de metas. Sirve para definir a que áreas tiene permisos</p>
 </dd></dl>
 
 </div>
@@ -157,17 +184,16 @@ evolución para el control ciudadano.</div>
 </ul>
 <p class="caption"><span class="caption-text">Aplicaciones</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Plan de metas del gobierno</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 </ul>
 
 <div class="relations">
@@ -194,7 +220,7 @@ evolución para el control ciudadano.</div>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2017, Municipalidad de Córdoba.
+      &copy;2016-2018, Municipalidad de Córdoba.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>

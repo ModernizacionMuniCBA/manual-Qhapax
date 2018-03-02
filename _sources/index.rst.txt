@@ -15,14 +15,15 @@ la Municipalidad Nacional de Córdoba.
    :maxdepth: 1
    :caption: Aplicaciones
 
-   catastro
+   core
+   funcionarios
    comunicacionfuncionarios
    convenios
    cordobaplantavida
-   formulariospublicos
    guiasturisticos
    ordenanzatributaria
    organizaciones
    plandeforestacion
    plandemetas
    transportepublico
+   catastro

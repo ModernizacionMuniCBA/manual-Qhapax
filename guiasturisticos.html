@@ -25,7 +25,7 @@
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Ordenanza Tarifaria Anual" href="ordenanzatributaria.html" />
-    <link rel="prev" title="Formularios rápidos al público" href="formulariospublicos.html" />
+    <link rel="prev" title="Córdoba planta vida" href="cordobaplantavida.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -81,6 +81,34 @@ uberización)</li>
 </div>
 <div class="section" id="module-guiasturisticos.models">
 <span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-guiasturisticos.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="guiasturisticos.models.GuiaTuristico">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">GuiaTuristico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.GuiaTuristico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>guia turistico no hereda de “Core.Persona” porque aquel esta pensado para funcionarios #TODO</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.HabilitacionGuiaTuristico">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">HabilitacionGuiaTuristico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.HabilitacionGuiaTuristico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Habiulitación de ejercicio de un Guía Turístico</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.NivelIdioma">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">NivelIdioma</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.NivelIdioma" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Niveles en que medimos el manejo de un idioma</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.NivelIdiomaGuia">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">NivelIdiomaGuia</code><span class="sig-paren">(</span><em>id</em>, <em>nivel</em>, <em>idioma</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.NivelIdiomaGuia" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.TituloGuia">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">TituloGuia</code><span class="sig-paren">(</span><em>id</em>, <em>guia</em>, <em>titulo</em>, <em>organizacion_cecrtificante</em>, <em>fecha</em>, <em>titulo_archivo</em>, <em>observaciones_internas</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.TituloGuia" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 </div>
 
@@ -106,24 +134,23 @@ uberización)</li>
 </ul>
 <p class="caption"><span class="caption-text">Aplicaciones</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulariospublicos.html">Formularios rápidos al público</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Registro de guías turísticos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="formulariospublicos.html" title="capítulo anterior">Formularios rápidos al público</a></li>
+      <li>Previous: <a href="cordobaplantavida.html" title="capítulo anterior">Córdoba planta vida</a></li>
       <li>Next: <a href="ordenanzatributaria.html" title="próximo capítulo">Ordenanza Tarifaria Anual</a></li>
   </ul></li>
 </ul>
@@ -143,7 +170,7 @@ uberización)</li>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2017, Municipalidad de Córdoba.
+      &copy;2016-2018, Municipalidad de Córdoba.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
