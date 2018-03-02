@@ -1,0 +1,18 @@
+Datos de catastro
+=================
+
+Pensado inicialmente para registrar parcelas de catastro.
+
+Modelos
+-------
+
+.. automodule:: catastro.models
+   :members:
+
+
+Modelos
+-------
+
+.. automodule:: catastro.models
+   :members:
+

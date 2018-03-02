@@ -1,0 +1,109 @@
+Desagotes a vecinos
+===================
+
+Módulo de recepcion de solicitudes de vecinos para desagotes y registros
+de atención por parte de las empresas prestatarias del servicio.
+
+Prestatarias
+------------
+
+- En primer lugar es importante cargar al sistema las empresas que
+  proveerán este servicio. En la sección *Desagotesavecinos* se debe
+  ingresar a *Prestatarias de desagotes*.
+- En la parte superior derecha de la pantalla y con el boton *Agregar
+  prestatarias de desagotes*.
+- Allí deben cargarse el número de CUIT y nombre de las empresas.
+
+Recepción de solicitudes de desagotes
+-------------------------------------
+
+Para cargar las solicitudes de desagotes realizadas por los vecinos debe
+ingresarse a la sección *Solicitudes de desagotes* en
+*Desagotesavecinos*. Allí se verá la lista de solicitudes ya cargadas.
+
+Con el boton *Agregar Solicitud de desagotes* puede cargarse una
+solicitud.
+
+.. figure:: docs/img/nuevo-desagote.png
+   :alt: nuevo desagote
+
+   nuevo desagote
+
+Para esta carga se requiere cargar o la nomenclatura catastral o el
+domicilio del solicitante. Preferentemente debe cargarse la
+nomenclatura catatral ya que esta puede geolocalizarse desde el
+`portal de  catastro <https://gobiernoabierto.cordoba.gob.ar/mapas/emap/>`__.
+
+Si es posible, deben cargarse ambas.
+
+Además debe cargarse la cantidad cámaras y viviendas en terreno.
+
+En la parte inferior pueden agregarse uno o más vías de comunicación
+del solicitante. Es muy importante al menos cargar una.
+
+El botón *agregar* al final permite agregar todas las vías de
+comunicación que sean necesarias.
+
+.. figure:: docs/img/comunicacion-solicitante-desagote.png
+   :alt: comunicacion desagote
+
+   comunicacion desagote
+
+Cada pozo (no cámara) debe describirse al final en la parte inferior con
+detalles mínimos.
+
+.. figure:: docs/img/pozos.png
+   :alt: pozos
+
+   pozos
+
+El botón *agregar* al final permite agregar todas los pozos que deban
+describirse.
+
+Derivación hacia una empresa prestataria
+----------------------------------------
+
+Una vez que sea posible debería ingresar a la lista de solicitudes
+pendientes y derivar aquellas que aún no hayan sido asignadas a una de
+las empresas prestatarias.
+
+Para elegir los elementos a analizar en la lista de desagotes es posible
+filtrar desde los selectores en la parte superior derecha del listado.
+
+.. figure:: docs/img/filtros.png
+   :alt: filtros
+
+   filtros
+
+Algún usuario de cada empresa prestataria debe tener acceso al sistema
+para saber que tareas han sido asignadas a su empresa.
+
+Marcar trabajo como terminado
+-----------------------------
+
+La misma empresa que realiza el servicio o algún usuario del sistema que
+reciba la notificación puede marcar el trabajo como terminado editando.
+La fecha se actualizará automáticamente al cambiar el estado.
+
+Perfiles de usarios
+~~~~~~~~~~~~~~~~~~~
+
+En este módulo hay un perfil de administrador desde el municipio que
+puede ver y editar las solicitudes para asignarlas a las prestatarias.
+
+Debe existir un perfil para los usuarios externos de las prestarias
+que pueda ver la lista de tareas asignadas SOLO a su empresa. Tambien
+debe permitirle marcar los trabajos terminados y agregar observaciones
+si las hubiera.
+
+Analizar la posibilidad de que la prestataria pueda modificar el
+registro con datos de la vivienda como referencia para futuras
+visitas.
+
+
+Modelos
+-------
+
+.. automodule:: desagotesavecinos.models
+   :members:
+

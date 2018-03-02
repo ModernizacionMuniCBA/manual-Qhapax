@@ -1,0 +1,95 @@
+Córdoba planta vida
+===================
+
+Es un programa de forestación basado en los plantar un árbol por cada
+niño que nace en la Ciudad.
+
+En cada nacimiento debe contenerse con datos del barrio o zona indicado
+ya que es importante que exista un plan de forestación que indique que
+especies se deben plantarse en cada lugar.
+
+Cada registro de nacimiento se transforma en un registro de seguimiento
+de este plan.
+
+Lista de pendientes
+-------------------
+
+En el primer paso van a ver la lista de todos los nacidos.
+
+|lista| ​ La tarea de aplicar el objetivo de este módulo implica
+comunicarse vía email o telefónica con los padres de cada nacido para
+notificarles que pueden pasar a retirar una semilla.
+
+Cada trámite está en una de las líneas tiene un estado:
+
+- Pendiente: El niño nació y ambiente todavía no hizo ningún trámite -
+  Notificación enviada: Le mandamos un email o un SMS y no sabemos si lo
+  recibió
+
+- Notificación recibida: Sabemos fehacientemente que la
+  recibieron (por ejemplo si los llamamos por telefono o contestaron
+  nuestro email)
+
+- Semilla entregadas: Los padres vinieron a buscarlas
+
+- Vencido el plazo: Automáticamente si pasan 60 días desde la
+  notificación y los padres no vinieron a buscarla
+
+- Municipio planto el árbol: Se venció el plazo y entonces el
+  municipio planto el árbol
+
+- Caduco el plazo para que municipio plante el arbol: Para que no nos
+  queden registros sin atender, si el municpio no planta el arbol en X
+  días entonces pasamos el trámite a este estado y lo descartamos.
+
+Filtrar listas
+--------------
+
+Siempre desde el menú de filtro de arriba a la derecha se podrá filtrar
+para ver trámites en un estado específico.
+
+.. figure:: docs/img/filtros.png
+   :alt: filtros
+
+   filtros
+
+Modificar registros
+-------------------
+
+Desde la lista podrá siempre para atender un caso clickear sobre la
+primera columna del elemento de la lista que se desea modificar. Allí se
+abrirá el formulario donde se podrá modificar el *estado*, especificar
+la *especie plantada* y agregar *observaciones internas* si fuera
+necesario.
+
+​|editar|
+
+​Las fechas en que cambian los estados se registrarán automáticamente,
+estarán visibles en las listas pero no son modificables. El sistema las
+define automáticamente.
+
+Datos de nacimientos (desarrolladores)
+--------------------------------------
+
+Los datos de los nacimientos de cada día se extraen vía webservice a
+la base de datos del Registro Civil. En nuestro caso se hace vía tarea
+programada con el `script
+  importar\_nacimientos\_registro\_civil.py\_ <management/commands/importar_nacimientos_registro_civil.py>`__.
+
+Por ejemplo:
+
+::
+
+    python manage.py importar_nacimientos_registro_civil --fechaDesde 2017-01-01 --fechaHasta 2017-02-01
+
+.. |lista| image:: docs/img/lista.png
+.. |editar| image:: docs/img/editar.png
+
+
+
+Modelos
+-------
+
+.. automodule:: cordobaplantavida.models
+   :members:
+

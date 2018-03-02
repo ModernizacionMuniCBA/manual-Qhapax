@@ -1,0 +1,29 @@
+Datos del transporte público de la Ciudad de Córdoba
+====================================================
+
+El sistema de transporte público masivo de Córdoba esta basado en varias
+empresas. Cada empresa tienen líneas asignadas con recorridos
+especificados.
+
+| Cada emopresa coordina con el municipio los recorridos y las paradas.
+  Estos son dinámicos.
+| Las empresas de transporte pueden elegir su proveedor de sistemas pero
+  deben entregar esta información junto a la del GPS de las unidades.
+
+En el caso de la ciudad de Córdoba, todas las empresas de transporte
+utilizan el mismo proveedor de servicios informáticos por lo que se
+simplifica la conexión a estos datos.
+
+| Este modelo se conecta al webservice de esta empresa para sincronizar
+  los datos.
+| Como suponemos que estos servicios tecnológicos pueden cambiar de
+  proveedor en el futuro, mantenemos este modulo para tener una copia de
+  los datos y garantizar los mismos al futuro proveedor.
+
+
+Modelos
+-------
+
+.. automodule:: transportepublico.models
+   :members:
+

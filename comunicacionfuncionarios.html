@@ -1,0 +1,167 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Comunicacion con funcionarios &#8212; documentación de Qhapax - 0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Convenios vigentes y pasados con Organizaciones" href="convenios.html" />
+    <link rel="prev" title="Datos de catastro" href="catastro.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="comunicacion-con-funcionarios">
+<h1>Comunicacion con funcionarios<a class="headerlink" href="#comunicacion-con-funcionarios" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Aplicacion para la comunicación bidireccional con los funcionarios
+políticos.</p>
+<p>Esto incluye recibir información:</p>
+<ul class="simple">
+<li>Invitaciones a eventos especiales de Gobierno (en algunos casos con control de asistencia)</li>
+<li>Avisos de Audiencias pendientes.</li>
+<li>Solicitudes de acceso a la información pendientes.</li>
+<li>Mensajes privados de otros funcionarios.</li>
+</ul>
+<p>Permite además que el funcionario envíe información:</p>
+<ul class="simple">
+<li>Alertas de asambleas en su área. Esto permitirá avisar a los vecinos para que no</li>
+</ul>
+<p>vengan al palacio o no esperen algunos servicios.
+- Notificación de vacaciones y ausencias programadas
+- Notificación de viajes a charlas, seminarios o eventos de interés para su cargo.
+Avances o novedades en su área (podríá incluirse el plan de metas)</p>
+<div class="section" id="module-comunicacionfuncionarios.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-comunicacionfuncionarios.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="comunicacionfuncionarios.models.ActividadFuncionarios">
+<em class="property">class </em><code class="descclassname">comunicacionfuncionarios.models.</code><code class="descname">ActividadFuncionarios</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#comunicacionfuncionarios.models.ActividadFuncionarios" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>de las actividades públicas administradas desde 
+eventospublicos.ActividadPublica algunas se marcarán 
+para que sea notificada a la app de funcionarios</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="comunicacionfuncionarios.models.AsistenciaActividadFuncionario">
+<em class="property">class </em><code class="descclassname">comunicacionfuncionarios.models.</code><code class="descname">AsistenciaActividadFuncionario</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#comunicacionfuncionarios.models.AsistenciaActividadFuncionario" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>asistencia de funcionarios a actividades a las que fueron citados</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="comunicacionfuncionarios.models.NotificacionActividadFuncionario">
+<em class="property">class </em><code class="descclassname">comunicacionfuncionarios.models.</code><code class="descname">NotificacionActividadFuncionario</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#comunicacionfuncionarios.models.NotificacionActividadFuncionario" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>respuestas previas de los funcionarios sobre si asistirán</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="comunicacionfuncionarios.models.TipoActividadFuncionarios">
+<em class="property">class </em><code class="descclassname">comunicacionfuncionarios.models.</code><code class="descname">TipoActividadFuncionarios</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#comunicacionfuncionarios.models.TipoActividadFuncionarios" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>tipos de actividades</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="catastro.html" title="capítulo anterior">Datos de catastro</a></li>
+      <li>Next: <a href="convenios.html" title="próximo capítulo">Convenios vigentes y pasados con Organizaciones</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016-2018, Municipalidad de Córdoba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/comunicacionfuncionarios.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

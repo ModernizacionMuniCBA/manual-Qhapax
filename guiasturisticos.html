@@ -1,0 +1,188 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registro de guías turísticos &#8212; documentación de Qhapax - 0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Ordenanza Tarifaria Anual" href="ordenanzatributaria.html" />
+    <link rel="prev" title="Córdoba planta vida" href="cordobaplantavida.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="registro-de-guias-turisticos">
+<h1>Registro de guías turísticos<a class="headerlink" href="#registro-de-guias-turisticos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Lista de guías turísticos autorizados.</p>
+<div class="line-block">
+<div class="line">Los interesados se dan de alta en la web de turismo y se crean los
+registros iniciales.</div>
+<div class="line">Luego van a la oficina de turismo a llevar los papeles, se validan, se
+cargan y los damos de alta con alguna fecha de vencimiento.</div>
+</div>
+<div class="section" id="datos-a-solicitar">
+<h2>Datos a solicitar<a class="headerlink" href="#datos-a-solicitar" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Nombre</li>
+<li>Apellido</li>
+<li>DNI</li>
+<li>títulos</li>
+<li>idiomas</li>
+<li>CV</li>
+<li>Descripción personal del guía</li>
+<li>mail</li>
+<li>teléfono</li>
+<li>redes sociales</li>
+</ul>
+</div>
+<div class="section" id="habilitacion">
+<h2>Habilitación<a class="headerlink" href="#habilitacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta tiene una fecha de inicio y de vencimiento. El portal de Gobierno
+Abierto tiene una URL con la ficha del Guía, puede haber un código QR en
+una posible credencial habilitante.</p>
+<p>El registro de cada habilitación podría tener dos años de validez.</p>
+</div>
+<div class="section" id="agregados-posibles">
+<h2>Agregados posibles<a class="headerlink" href="#agregados-posibles" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Pensar un sistema de comentarios de los turistas (algo como una
+uberización)</li>
+</ul>
+</div>
+<div class="section" id="module-guiasturisticos.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-guiasturisticos.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="guiasturisticos.models.GuiaTuristico">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">GuiaTuristico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.GuiaTuristico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>guia turistico no hereda de “Core.Persona” porque aquel esta pensado para funcionarios #TODO</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.HabilitacionGuiaTuristico">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">HabilitacionGuiaTuristico</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.HabilitacionGuiaTuristico" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Habiulitación de ejercicio de un Guía Turístico</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.NivelIdioma">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">NivelIdioma</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.NivelIdioma" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Niveles en que medimos el manejo de un idioma</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.NivelIdiomaGuia">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">NivelIdiomaGuia</code><span class="sig-paren">(</span><em>id</em>, <em>nivel</em>, <em>idioma</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.NivelIdiomaGuia" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="guiasturisticos.models.TituloGuia">
+<em class="property">class </em><code class="descclassname">guiasturisticos.models.</code><code class="descname">TituloGuia</code><span class="sig-paren">(</span><em>id</em>, <em>guia</em>, <em>titulo</em>, <em>organizacion_cecrtificante</em>, <em>fecha</em>, <em>titulo_archivo</em>, <em>observaciones_internas</em><span class="sig-paren">)</span><a class="headerlink" href="#guiasturisticos.models.TituloGuia" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="cordobaplantavida.html" title="capítulo anterior">Córdoba planta vida</a></li>
+      <li>Next: <a href="ordenanzatributaria.html" title="próximo capítulo">Ordenanza Tarifaria Anual</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016-2018, Municipalidad de Córdoba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/guiasturisticos.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,238 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Plan de metas del gobierno &#8212; documentación de Qhapax - 0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Datos del transporte público de la Ciudad de Córdoba" href="transportepublico.html" />
+    <link rel="prev" title="Plan de Forestacion" href="plandeforestacion.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plan-de-metas-del-gobierno">
+<h1>Plan de metas del gobierno<a class="headerlink" href="#plan-de-metas-del-gobierno" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Las metas del gobierno estan estructuradas segun el siguiente nivel
+gerárquico.</p>
+<div class="line-block">
+<div class="line"><em>Lineamientos estratégicos</em>: Plan mas general de acciones de gobierno.</div>
+<div class="line">Cada lineamiento tiene <em>Componentes</em>.</div>
+<div class="line">Cada Componente tiene <em>Objetivos</em>.</div>
+<div class="line">Cada objetivo tiene <em>Metas</em>.</div>
+<div class="line">Para alcanzar cada meta hay una lista de <em>Actividades</em>.</div>
+</div>
+<div class="line-block">
+<div class="line">Cada uno de estos niveles tiene su propia composición y formas de
+medir el estado de avance.</div>
+<div class="line">Tiene que ser posoble publciar este plan general de acción y su
+evolución para el control ciudadano.</div>
+</div>
+<div class="section" id="module-plandemetas.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-plandemetas.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="plandemetas.models.AvanceIndicadorMeta">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">AvanceIndicadorMeta</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.AvanceIndicadorMeta" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>histórico de cada uno de los avances periódicos de las metas</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.Componente">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">Componente</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Componente" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada componente del lineamiento</p>
+<dl class="attribute">
+<dt id="plandemetas.models.Componente.objetivos">
+<code class="descname">objetivos</code><a class="headerlink" href="#plandemetas.models.Componente.objetivos" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>devolver solo los publicados</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.IndicadorMeta">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">IndicadorMeta</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.IndicadorMeta" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada uno de los indicadores del avance de la meta</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.Lineamiento">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">Lineamiento</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Lineamiento" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada una de las lineas de accion del plan.</p>
+<dl class="attribute">
+<dt id="plandemetas.models.Lineamiento.componentes">
+<code class="descname">componentes</code><a class="headerlink" href="#plandemetas.models.Lineamiento.componentes" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>devolver solo los publicados</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.Meta">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">Meta</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada meta del objetivo</p>
+<dl class="method">
+<dt id="plandemetas.models.Meta.cambios_pendientes">
+<code class="descname">cambios_pendientes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta.cambios_pendientes" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>indica si se han cargado propuestas de actualizacion en la meta o indicadores (los campos <a href="#id1"><span class="problematic" id="id2">new_</span></a>)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plandemetas.models.Meta.estado_de_avance_estimado">
+<code class="descname">estado_de_avance_estimado</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta.estado_de_avance_estimado" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>en la época de actualizaciones muchas veces no se carga el <a href="#id3"><span class="problematic" id="id4">new_</span></a>
+entonces necesitamos estimar cual sería el nuevo.
+Sólo cuando new_estado_de_avance &gt; estado_de_avance lo considero el _nuevo_</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="plandemetas.models.Meta.indicadores">
+<code class="descname">indicadores</code><a class="headerlink" href="#plandemetas.models.Meta.indicadores" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>devolver solo los publicados</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plandemetas.models.Meta.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Meta.save" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Se sobreescribe el save() para que cuando la meta este aprobada se
+actualice fecha_actualizacion_oficial</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.Objetivo">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">Objetivo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.Objetivo" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada objetivo del componente</p>
+<dl class="attribute">
+<dt id="plandemetas.models.Objetivo.metas">
+<code class="descname">metas</code><a class="headerlink" href="#plandemetas.models.Objetivo.metas" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>devolver solo los publicados</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.PlanDeMetas">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">PlanDeMetas</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.PlanDeMetas" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>datos generales del plan de metas</p>
+<dl class="attribute">
+<dt id="plandemetas.models.PlanDeMetas.lineamientos">
+<code class="descname">lineamientos</code><a class="headerlink" href="#plandemetas.models.PlanDeMetas.lineamientos" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>devolver solo los publicados</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plandemetas.models.UserPlanDeMetas">
+<em class="property">class </em><code class="descclassname">plandemetas.models.</code><code class="descname">UserPlanDeMetas</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plandemetas.models.UserPlanDeMetas" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>usuario especial de carga del plan de metas. Sirve para definir a que áreas tiene permisos</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cordobaplantavida.html">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="plandeforestacion.html" title="capítulo anterior">Plan de Forestacion</a></li>
+      <li>Next: <a href="transportepublico.html" title="próximo capítulo">Datos del transporte público de la Ciudad de Córdoba</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016-2018, Municipalidad de Córdoba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/plandemetas.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

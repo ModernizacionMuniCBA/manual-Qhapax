@@ -1,0 +1,208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Córdoba planta vida &#8212; documentación de Qhapax - 0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Registro de guías turísticos" href="guiasturisticos.html" />
+    <link rel="prev" title="Convenios vigentes y pasados con Organizaciones" href="convenios.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cordoba-planta-vida">
+<h1>Córdoba planta vida<a class="headerlink" href="#cordoba-planta-vida" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Es un programa de forestación basado en los plantar un árbol por cada
+niño que nace en la Ciudad.</p>
+<p>En cada nacimiento debe contenerse con datos del barrio o zona indicado
+ya que es importante que exista un plan de forestación que indique que
+especies se deben plantarse en cada lugar.</p>
+<p>Cada registro de nacimiento se transforma en un registro de seguimiento
+de este plan.</p>
+<div class="section" id="lista-de-pendientes">
+<h2>Lista de pendientes<a class="headerlink" href="#lista-de-pendientes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En el primer paso van a ver la lista de todos los nacidos.</p>
+<p><img alt="lista" src="docs/img/lista.png" /> ​ La tarea de aplicar el objetivo de este módulo implica
+comunicarse vía email o telefónica con los padres de cada nacido para
+notificarles que pueden pasar a retirar una semilla.</p>
+<p>Cada trámite está en una de las líneas tiene un estado:</p>
+<ul class="simple">
+<li>Pendiente: El niño nació y ambiente todavía no hizo ningún trámite -
+Notificación enviada: Le mandamos un email o un SMS y no sabemos si lo
+recibió</li>
+<li>Notificación recibida: Sabemos fehacientemente que la
+recibieron (por ejemplo si los llamamos por telefono o contestaron
+nuestro email)</li>
+<li>Semilla entregadas: Los padres vinieron a buscarlas</li>
+<li>Vencido el plazo: Automáticamente si pasan 60 días desde la
+notificación y los padres no vinieron a buscarla</li>
+<li>Municipio planto el árbol: Se venció el plazo y entonces el
+municipio planto el árbol</li>
+<li>Caduco el plazo para que municipio plante el arbol: Para que no nos
+queden registros sin atender, si el municpio no planta el arbol en X
+días entonces pasamos el trámite a este estado y lo descartamos.</li>
+</ul>
+</div>
+<div class="section" id="filtrar-listas">
+<h2>Filtrar listas<a class="headerlink" href="#filtrar-listas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Siempre desde el menú de filtro de arriba a la derecha se podrá filtrar
+para ver trámites en un estado específico.</p>
+<div class="figure" id="id3">
+<img alt="filtros" src="docs/img/filtros.png" />
+<p class="caption"><span class="caption-text">filtros</span></p>
+</div>
+</div>
+<div class="section" id="modificar-registros">
+<h2>Modificar registros<a class="headerlink" href="#modificar-registros" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Desde la lista podrá siempre para atender un caso clickear sobre la
+primera columna del elemento de la lista que se desea modificar. Allí se
+abrirá el formulario donde se podrá modificar el <em>estado</em>, especificar
+la <em>especie plantada</em> y agregar <em>observaciones internas</em> si fuera
+necesario.</p>
+<p>​|editar|</p>
+<p>​Las fechas en que cambian los estados se registrarán automáticamente,
+estarán visibles en las listas pero no son modificables. El sistema las
+define automáticamente.</p>
+</div>
+<div class="section" id="datos-de-nacimientos-desarrolladores">
+<h2>Datos de nacimientos (desarrolladores)<a class="headerlink" href="#datos-de-nacimientos-desarrolladores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los datos de los nacimientos de cada día se extraen vía webservice a
+la base de datos del Registro Civil. En nuestro caso se hace vía tarea
+programada con el <a href="#id1"><span class="problematic" id="id2">`</span></a>script</p>
+<blockquote>
+<div>importar_nacimientos_registro_civil.py_ &lt;management/commands/importar_nacimientos_registro_civil.py&gt;`__.</div></blockquote>
+<p>Por ejemplo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">importar_nacimientos_registro_civil</span> <span class="o">--</span><span class="n">fechaDesde</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span> <span class="o">--</span><span class="n">fechaHasta</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-cordobaplantavida.models">
+<span id="modelos"></span><h2>Modelos<a class="headerlink" href="#module-cordobaplantavida.models" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="cordobaplantavida.models.ArbolCordobaPlantaVida">
+<em class="property">class </em><code class="descclassname">cordobaplantavida.models.</code><code class="descname">ArbolCordobaPlantaVida</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cordobaplantavida.models.ArbolCordobaPlantaVida" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Córdoba planta vida es un arbol por cada nacido
+Seguimos el camino de la entrega de cada árbol y registramos los cambios de estado
+Periodicamente se debe revisar los plazos y cambiar el estado desde el sistema</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cordobaplantavida.models.Nacido">
+<em class="property">class </em><code class="descclassname">cordobaplantavida.models.</code><code class="descname">Nacido</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cordobaplantavida.models.Nacido" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada uno de los niños nacidos y registrados por nuestro registro civil</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cordobaplantavida.models.Progenitor">
+<em class="property">class </em><code class="descclassname">cordobaplantavida.models.</code><code class="descname">Progenitor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cordobaplantavida.models.Progenitor" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Cada uno de los padres que anotan a sus hijos (a veces es solo uno por nacimiento)</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Qhapax</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Qhapax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="psql-init.html">Crear una base de datos y usuario en Postgres</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aplicaciones</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="comunicacionfuncionarios.html">Comunicacion con funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convenios.html">Convenios vigentes y pasados con Organizaciones</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Córdoba planta vida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guiasturisticos.html">Registro de guías turísticos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ordenanzatributaria.html">Ordenanza Tarifaria Anual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizaciones.html">Organizaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandeforestacion.html">Plan de Forestacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plandemetas.html">Plan de metas del gobierno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transportepublico.html">Datos del transporte público de la Ciudad de Córdoba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catastro.html">Datos de catastro</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="convenios.html" title="capítulo anterior">Convenios vigentes y pasados con Organizaciones</a></li>
+      <li>Next: <a href="guiasturisticos.html" title="próximo capítulo">Registro de guías turísticos</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016-2018, Municipalidad de Córdoba.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/cordobaplantavida.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

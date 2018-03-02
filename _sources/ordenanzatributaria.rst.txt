@@ -1,0 +1,95 @@
+Ordenanza Tarifaria Anual
+=========================
+
+Modulo destinado a la ordenanza tributaria del municipio.
+
+I CONTRIBUCIÓN QUE INCIDE SOBRE LOS INMUEBLES
+---------------------------------------------
+
+II CONTRIBUCIÓN QUE INCIDE SOBRE LA ACTIVIDAD COMERCIAL, INDUSTRIAL Y DE SERVICIOS
+----------------------------------------------------------------------------------
+
+| Aqui se describen los rubros y categorias en los que la actividad
+  comercial se divide.
+| Se incluyen tambien las alicuotas correspondientes.
+
+III CONTRIBUCIÓN QUE INCIDE SOBRE LAS DIVERSIONES Y ESPECTÁCULOS PÚBLICOS
+-------------------------------------------------------------------------
+
+IV CONTRIBUCIÓN POR LOS SERVICIOS ADICIONALES MUNICIPALES
+---------------------------------------------------------
+
+-  .. rubric:: CONTRIBUCIÓN QUE INCIDE SOBRE LOS MERCADOS
+      :name: contribución-que-incide-sobre-los-mercados
+
+-  .. rubric:: VI CONTRIBUCIÓN QUE INCIDE SOBRE SERVICIOS DE PROTECCIÓN
+      SANITARIA
+      :name: vi-contribución-que-incide-sobre-servicios-de-protección-sanitaria
+
+-  .. rubric:: VII CONTRIBUCIÓN QUE INCIDE SOBRE LA OCUPACIÓN O
+      UTILIZACIÓN DE LOS ESPACIOS DEL DOMINIO PÚBLICO Y LUGARES DE USO
+      PÚBLICO
+      :name: vii-contribución-que-incide-sobre-la-ocupación-o-utilización-de-los-espacios-del-dominio-público-y-lugares-de-uso-público
+
+-  .. rubric:: VIII CONTRIBUCIÓN QUE INCIDE SOBRE LOS CEMENTERIOS
+      :name: viii-contribución-que-incide-sobre-los-cementerios
+
+-  .. rubric:: IX CONTRIBUCIÓN QUE INCIDE SOBRE LA CONSTRUCCIÓN DE OBRAS
+      :name: ix-contribución-que-incide-sobre-la-construcción-de-obras
+
+-  .. rubric:: X CONTRIBUCIÓN QUE INCIDE SOBRE LA INSTALACIÓN MECÁNICA Y
+      SOBRE LA INSTALACIÓN Y SUMINISTRO DE ENERGÍA ELÉCTRICA
+      :name: x-contribución-que-incide-sobre-la-instalación-mecánica-y-sobre-la-instalación-y-suministro-de-energía-eléctrica
+
+-  .. rubric:: XI CONTRIBUCIÓN PARA LA FINANCIACIÓN DEL DESARROLLO LOCAL
+      Y REGIONAL DE OBRAS DE GAS NATURAL Y OTRAS DE INTERÉS GENERAL
+      :name: xi-contribución-para-la-financiación-del-desarrollo-local-y-regional-de-obras-de-gas-natural-y-otras-de-interés-general
+
+-  .. rubric:: XII CONTRIBUCIÓN PARA LA FINANCIACIÓN DEL DESARROLLO DE
+      LA INFRAESTRUCTURA SANITARIA Y CLOACAL
+      :name: xii-contribución-para-la-financiación-del-desarrollo-de-la-infraestructura-sanitaria-y-cloacal
+
+-  .. rubric:: XIII TASAS DE ACTUACIÓN ADMINISTRATIVA
+      :name: xiii-tasas-de-actuación-administrativa
+
+-  .. rubric:: XIV RENTAS DIVERSAS
+      :name: xiv-rentas-diversas
+
+-  .. rubric:: XV CONTRIBUCIÓN QUE INCIDE SOBRE LOS VEHÍCULOS
+      AUTOMOTORES, ACOPLADOS Y SIMILARES
+      :name: xv-contribución-que-incide-sobre-los-vehículos-automotores-acoplados-y-similares
+
+-  .. rubric:: XVI CONTRIBUCIÓN QUE INCIDE SOBRE LA CONSTRUCCIÓN,
+      MANTENIMIENTO Y REGISTRACIÓN POR EL EMPLAZAMIENTO DE ANTENAS,
+      ESTRUCTURAS SOPORTE Y EQUIPOS COMPLEMENTARIOS DE LOS SERVICIOS DE
+      TELECOMUNICACIONES MÓVILES
+      :name: xvi-contribución-que-incide-sobre-la-construcción-mantenimiento-y-registración-por-el-emplazamiento-de-antenas-estructuras-soporte-y-equipos-complementarios-de-los-servicios-de-telecomunicaciones-móviles
+
+-  .. rubric:: XVII CONTRIBUCIÓN QUE INCIDE SOBRE LA IDENTIFICACIÓN,
+      VERIFICACIÓN Y/O CONTROL DE ESTRUCTURAS DE ANTENAS, ELEMENTOS DE
+      SOPORTE DE ANTENAS Y SUS EQUIPOS COMPLEMENTARIOS
+      :name: xvii-contribución-que-incide-sobre-la-identificación-verificación-yo-control-de-estructuras-de-antenas-elementos-de-soporte-de-antenas-y-sus-equipos-complementarios
+
+-  .. rubric:: XVIII ONTRIBUCIÓN QUE INCIDE SOBRE LOS ANUNCIOS
+      PUBLICITARIOS
+      :name: xviii-ontribución-que-incide-sobre-los-anuncios-publicitarios
+
+-  .. rubric:: XIX CONTRIBUCIÓN AMBIENTAL POR GENERACIÓN Y TRANSPORTE DE
+      RESTOS DE OBRAS Y DEMOLICIONES
+      :name: xix-contribución-ambiental-por-generación-y-transporte-de-restos-de-obras-y-demoliciones
+
+-  .. rubric:: XX DISPOSICIONES COMPLEMENTARIAS
+      :name: xx-disposiciones-complementarias
+
+-  .. rubric:: XXI DISPOSICIONES TRANSITORIAS
+      :name: xxi-disposiciones-transitorias
+
+-  
+
+
+Modelos
+-------
+
+.. automodule:: ordenanzatributaria.models
+   :members:
+
